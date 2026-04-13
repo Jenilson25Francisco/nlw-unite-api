@@ -7,6 +7,9 @@ import com.zanguetsuinc.nlwunitesapi.domain.model.Attendee;
 import com.zanguetsuinc.nlwunitesapi.domain.repository.AttendeeRepository;
 import com.zanguetsuinc.nlwunitesapi.domain.service.AttendeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +31,11 @@ public class AttendeeController {
 
         return attendeeAssembler.toDto(savedAttendee);
 
+    }
+
+    @GetMapping
+    public Page<Attendee> listAll(Pageable pageable){
+        return attendeeRepository.findAll(pageable);
     }
 
 }

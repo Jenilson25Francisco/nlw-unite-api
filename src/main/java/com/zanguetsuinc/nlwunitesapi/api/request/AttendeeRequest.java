@@ -11,6 +11,5 @@ public class AttendeeRequest {
 
     private String nome;
     private String email;
-    private LocalDateTime checkedInAt;
 
 }
