@@ -10,6 +10,6 @@ RUN mvn clean install
 FROM eclipse-temurin:26-jdk
 EXPOSE 8080
 
-COPY --from=build /target/sensores-1.0.1-SNAPCHOT.jar app.jar
+COPY --from=build /target/nlw-unites-api-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
